@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影视导航网</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2a4365 100%);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .site-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .category-header {
+            background-color: #2d3748;
+            color: white;
+            padding: 0.5rem 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .site-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 0.5rem 0.5rem;
+            overflow: hidden;
+        }
+        .site-table th {
+            background-color: #4a5568;
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            padding: 0.75rem 1rem;
+        }
+        .site-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .site-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .site-table tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        .site-table tr:last-child td {
+            border-bottom: none;
+        }
+        .visit-btn {
+            display: inline-block;
+            background-color: #3182ce;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        .visit-btn:hover {
+            background-color: #2c5282;
+        }
+        .category-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .category-综合影视 {
+            background-color: #ebf4ff;
+            color: #3182ce;
+        }
+        .category-热门影视 {
+            background-color: #fef0f5;
+            color: #d53f8c;
+        }
+        .category-动漫资源 {
+            background-color: #f0fff4;
+            color: #38a169;
+        }
+        .category-韩剧资源 {
+            background-color: #fff5f5;
+            color: #e53e3e;
+        }
+        .category-直播-其他 {
+            background-color: #faf5ff;
+            color: #805ad5;
+        }
+        .recommend-icon {
+            color: #f6ad55;
+            margin-right: 0.25rem;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #2d3748;
+            color: white;
+            margin-top: 2rem;
+        }
+         {
+            body {
+                background-color: white;
+            }
+            .header {
+                background: #1a365d !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .category-header, .site-table th {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .site-table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="site-title">影视导航网</h1>
+            <p class="text-center text-white text-lg">汇集优质影视资源，让您轻松畅享高清影视世界</p>
+        </div>
+    </header>
+
+    <main class="container py-8">
+        <!-- 综合影视 -->
+        <div class="category-header">
+            <i class="fas fa-film mr-2"></i> 综合影视
+        </div>
+        <table class="site-table">
+            <thead>
+                <tr>
+                    <th width="20%">网站分类</th>
+                    <th width="25%">网站名称</th>
+                    <th width="25%">最新网址</th>
+                    <th width="30%">备注说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>厂长资源</td>
+                    <td><a href="https://www.czzy77.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>超清视频站</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>火车太堵</td>
+                    <td><a href="https://www.tdgo.shop/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>全网蓝光急速观影</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>4K影视</td>
+                    <td><a href="https://www.4kvm.tv/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>高清4K在线</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>海纳TV</td>
+                    <td><a href="https://www.hainatv.net/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>高清蓝光画质/实时更新</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>爱电影</td>
+                    <td><a href="http://ivdy.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>全网VIP资源</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>爱看影视</td>
+                    <td><a href="https://www.akys.info/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>最新热门电影/电视剧</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>魔法解析</td>
+                    <td><a href="https://wantwatch.me/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>智能源解析全网影视</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>饺子影视</td>
+                    <td><a href="https://www.jiaozi.me/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>超清在线视频站</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>剧爷爷</td>
+                    <td><a href="https://www.juyeye.cc/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>限自营线路高清无广</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>金牌影院</td>
+                    <td><a href="https://www.6umkq9b.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>全网VIP资源</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>独播库</td>
+                    <td><a href="https://www.duboku.tv/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>超清无广/播放速度快</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>剧看看</td>
+                    <td><a href="https://www.jukankan.tv/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>美剧韩剧国产剧一应俱全</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>奈飞工厂</td>
+                    <td><a href="https://www.netflixgc.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>Netflix资源</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>看片狂人</td>
+                    <td><a href="https://kuangren.us/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>视频解析源</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>爱壹帆</td>
+                    <td><a href="https://www.iyf.lv/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>海量高清视频免费观看</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>星空影视</td>
+                    <td><a href="https://www.xkvvv.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>高清画质/有冷门港剧</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>NO视频</td>
+                    <td><a href="https://www.novipnoad.net/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>主打港台日韩泰土欧美</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>欧乐影院</td>
+                    <td><a href="https://www.olehdtv.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>超清画质/最新热门影视</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-综合影视">综合影视</span></td>
+                    <td>FreeHD</td>
+                    <td><a href="https://www.freehd1.vip/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>超清线路无广</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 热门影视 -->
+        <div class="category-header">
+            <i class="fas fa-fire mr-2"></i> 热门影视
+        </div>
+        <table class="site-table">
+            <thead>
+                <tr>
+                    <th width="20%">网站分类</th>
+                    <th width="25%">网站名称</th>
+                    <th width="25%">最新网址</th>
+                    <th width="30%">备注说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="category-badge category-热门影视">热门影视</span></td>
+                    <td>修罗影视</td>
+                    <td><a href="https://xlys.me/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>最新电影电视剧短剧</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-热门影视">热门影视</span></td>
+                    <td>低端影视</td>
+                    <td><a href="https://ddys.info/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>主打国外影视</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-热门影视">热门影视</span></td>
+                    <td>LIVIBO</td>
+                    <td><a href="https://www.libvio.vip/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>主打国外影视</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-热门影视">热门影视</span></td>
+                    <td>素白白影视</td>
+                    <td><a href="https://www.subaibaiys.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>超清无广国产剧港剧</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-热门影视">热门影视</span></td>
+                    <td>黑夜影视</td>
+                    <td><a href="https://darkvod.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>综合影视/多线路</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-热门影视">热门影视</span></td>
+                    <td>TVB云播</td>
+                    <td><a href="http://www.hktvyb.vip/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>高清画质/多线路</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-热门影视">热门影视</span></td>
+                    <td>真狼影视</td>
+                    <td><a href="https://www.zhenlang.cc/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>超清画质/热门影视/速度快</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-热门影视">热门影视</span></td>
+                    <td>耐看点播</td>
+                    <td><a href="https://nkvod.me/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>超清画质/播放速度快</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 动漫资源 -->
+        <div class="category-header">
+            <i class="fas fa-dragon mr-2"></i> 动漫资源
+        </div>
+        <table class="site-table">
+            <thead>
+                <tr>
+                    <th width="20%">网站分类</th>
+                    <th width="25%">网站名称</th>
+                    <th width="25%">最新网址</th>
+                    <th width="30%">备注说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>AGE动漫</td>
+                    <td><a href="https://www.agedm.org/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>高清动漫/资源较全</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>233动漫</td>
+                    <td><a href="https://www.233dm.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>超清无广/有弹幕/特摄片</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>风铃动漫</td>
+                    <td><a href="https://www.aafun.cc/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>超清无广/有弹幕/番剧</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>路漫漫</td>
+                    <td><a href="https://i.qg50.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>高清国产动漫/日本动漫</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>趣动漫</td>
+                    <td><a href="https://www.qdm66.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>超清画质/专注动漫</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>萌道动漫</td>
+                    <td><a href="https://www.mengdaow.org/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>超清画质/专注国外动漫</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>E站弹幕网</td>
+                    <td><a href="https://www.ezdmw.site/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>超清画质/注入B站弹幕</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>AnFuns动漫</td>
+                    <td><a href="https://www.anfuns.org/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>超清画质/秒播/少量蓝光</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>MiruroTV</td>
+                    <td><a href="https://www.miruro.tv/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>高清画质/英文字幕</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>柒番</td>
+                    <td><a href="https://www.qifun.cc/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>高清画质/番剧和海外剧</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-动漫资源">动漫资源</span></td>
+                    <td>girigiri爱动漫</td>
+                    <td><a href="https://anime.girigirilove.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td><i class="fas fa-thumbs-up recommend-icon"></i>超清画质/简繁字幕/弹幕</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 韩剧资源 -->
+        <div class="category-header">
+            <i class="fas fa-globe-asia mr-2"></i> 韩剧资源
+        </div>
+        <table class="site-table">
+            <thead>
+                <tr>
+                    <th width="20%">网站分类</th>
+                    <th width="25%">网站名称</th>
+                    <th width="25%">最新网址</th>
+                    <th width="30%">备注说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="category-badge category-韩剧资源">韩剧资源</span></td>
+                    <td>韩剧看看</td>
+                    <td><a href="https://www.hanjukankan.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>超清韩国电影/剧集/综艺</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 直播 & 其他 -->
+        <div class="category-header">
+            <i class="fas fa-video mr-2"></i> 直播 & 其他
+        </div>
+        <table class="site-table">
+            <thead>
+                <tr>
+                    <th width="20%">网站分类</th>
+                    <th width="25%">网站名称</th>
+                    <th width="25%">最新网址</th>
+                    <th width="30%">备注说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="category-badge category-直播-其他">直播 & 其他</span></td>
+                    <td>CN影院</td>
+                    <td><a href="https://cnys.tv/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>需翻墙/蓝光画质</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-直播-其他">直播 & 其他</span></td>
+                    <td>ODC影视</td>
+                    <td><a href="https://www.ondemandchina.com/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>需翻墙/蓝光画质</td>
+                </tr>
+                <tr>
+                    <td><span class="category-badge category-直播-其他">直播 & 其他</span></td>
+                    <td>华人直播</td>
+                    <td><a href="https://huaren.live/" target="_blank" class="visit-btn"><i class="fas fa-rocket mr-1"></i>立即访问</a></td>
+                    <td>需翻墙/蓝光画质</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2023 影视导航网 - 汇集优质影视资源导航</p>
+            <p class="mt-2 text-sm">免责声明：本站所有内容均来自互联网，本站不提供影视存储和播放服务，仅提供影视网站导航。</p>
+        </div>
+    </footer>
+</body>
+</html>
